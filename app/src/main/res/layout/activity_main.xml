@@ -6,20 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <!--抽屉内容-->
-    <!--左边抽屉菜单宽高什么的可以自己调-->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_left"
-        style="android:windowTranslucentStatus"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="left"
-        app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/navigitionview_item"
-        tools:ignore="RtlHardcoded" />
     <!--    底部导航栏-->
     <include
         layout="@layout/bottomnav_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <!--抽屉内容-->
+    <!--左边抽屉菜单宽高什么的可以自己调-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_left"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        app:menu="@menu/navigitionview_item"
+        tools:ignore="RtlHardcoded" />
 </androidx.drawerlayout.widget.DrawerLayout>

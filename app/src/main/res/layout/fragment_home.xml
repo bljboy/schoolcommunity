@@ -30,7 +30,7 @@
                     android:src="@drawable/appbar_navigation"
                     tools:ignore="ContentDescription" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -48,6 +48,32 @@
                     android:src="@drawable/appbar_search"
                     tools:ignore="ContentDescription" />
             </com.google.android.material.appbar.MaterialToolbar>
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/appbar_color"
+                app:tabIndicatorColor="#756c1b"
+                app:tabSelectedTextColor="#756c1b"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="1dp"
+                app:tabTextColor="#9e9225">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="帖子" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="资讯" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="校园" />
+            </com.google.android.material.tabs.TabLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView

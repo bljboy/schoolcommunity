@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/nav_home"
         android:enabled="true"
         android:icon="@drawable/home"
         android:title="@string/menu_item_home" />
     <item
-        android:id="@+id/chat"
+        android:id="@+id/nav_chat"
         android:enabled="true"
         android:icon="@drawable/chat"
 
         android:title="@string/menu_item_chat" />
     <item
-        android:id="@+id/tools"
+        android:id="@+id/nav_tools"
         android:enabled="true"
         android:icon="@drawable/tools"
 
         android:title="@string/menu_item_tools" />
     <item
-        android:id="@+id/me"
+        android:id="@+id/nav_me"
         android:enabled="true"
         android:icon="@drawable/me"
 
