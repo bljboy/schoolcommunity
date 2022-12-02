@@ -19,7 +19,8 @@
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize">
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways">
 
                 <ImageButton
                     android:id="@+id/appbar_navigation"
@@ -50,13 +51,14 @@
             </com.google.android.material.appbar.MaterialToolbar>
 
             <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/appbar_color"
                 app:tabIndicatorColor="#756c1b"
-                app:tabSelectedTextColor="#756c1b"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="1dp"
+                app:tabSelectedTextColor="#756c1b"
                 app:tabTextColor="#9e9225">
 
                 <com.google.android.material.tabs.TabItem
@@ -79,8 +81,21 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:ignore="SpeakableTextPresentCheck">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
 
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
