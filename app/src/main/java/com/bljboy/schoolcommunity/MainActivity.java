@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import com.bljboy.schoolcommunity.myadapter.MyAdapterRecyclerView;
 import com.bljboy.schoolcommunity.nav_fragment.ChatFragment;
 import com.bljboy.schoolcommunity.nav_fragment.HomeFragment;
 import com.bljboy.schoolcommunity.nav_fragment.MeFragment;
@@ -36,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView drawerLayout;
     private View drawer_header;
     private ImageView drawer_header_image, drawer_header_image1,drawer_header_image3;
-
+    private RecyclerView recyclerView;
+    private MyAdapterRecyclerView myAdapterRecyclerView;
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Log:", "头部被点击了！");
             }
         });
-
     }
 
     private NavigationBarView.OnItemSelectedListener my_navItem = new NavigationBarView.OnItemSelectedListener() {
@@ -97,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.nav_container, fragment).commit();
     }
+    //绑定控件
 
 
 }

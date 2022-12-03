@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:elevation="1dp"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/forum_page_head"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/one"
+                app:layout_constraintEnd_toStartOf="@+id/forum_page_author"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/circleStyle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/forum_page_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="title_page"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/forum_page_head"
+                app:layout_constraintTop_toTopOf="@+id/forum_page_head" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/forum_page_pushtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="author"
+                android:textColor="#848484"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/forum_page_head"
+                app:layout_constraintLeft_toLeftOf="@id/forum_page_author"
+                app:layout_constraintTop_toBottomOf="@id/forum_page_author" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/forum_page_midimag"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/one"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/forum_page_pushtime" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/forum_page_context"
+                text-overflow="ellipsis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ellipsize="end"
+                android:lineHeight="25dp"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:text="防嗮服是防嗮服是s防sfsfsafasfasfaafsas嗮服是防嗮服是防嗮服是"
+                android:textColor="#848484"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/forum_page_midimag"
+                app:layout_constraintStart_toStartOf="@id/forum_page_midimag"
+                app:layout_constraintTop_toBottomOf="@id/forum_page_midimag" />
+            <!--                style="@style/Widget.Material3.Button.TextButton.Icon"
+            -->
+            <Button
+                style="@style/Widget.Material3.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="3"
+                android:textSize="18sp"
+                app:icon="@drawable/forum_message"
+                app:iconSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/forum_page_context"
+                app:layout_constraintTop_toBottomOf="@id/forum_page_context" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

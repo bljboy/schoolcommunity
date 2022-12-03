@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.util.Log;
@@ -17,16 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.bljboy.schoolcommunity.MyAdapter;
-import com.bljboy.schoolcommunity.tablayout_fragment.ForumFragment;
-import com.bljboy.schoolcommunity.tablayout_fragment.InformationFragment;
+import com.bljboy.schoolcommunity.myadapter.MyAdapter;
 import com.bljboy.schoolcommunity.R;
-import com.bljboy.schoolcommunity.tablayout_fragment.SchoolnewsFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment {
 

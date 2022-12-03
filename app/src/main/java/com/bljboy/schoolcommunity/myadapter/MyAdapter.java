@@ -1,4 +1,4 @@
-package com.bljboy.schoolcommunity;
+package com.bljboy.schoolcommunity.myadapter;
 
 import android.content.res.Resources;
 
