@@ -3,10 +3,8 @@ package com.bljboy.schoolcommunity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
@@ -16,10 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
-import com.bljboy.schoolcommunity.myadapter.MyAdapterRecyclerView;
+import com.bljboy.schoolcommunity.myadapter.MyAdapterForum;
 import com.bljboy.schoolcommunity.nav_fragment.ChatFragment;
 import com.bljboy.schoolcommunity.nav_fragment.HomeFragment;
 import com.bljboy.schoolcommunity.nav_fragment.MeFragment;
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private View drawer_header;
     private ImageView drawer_header_image, drawer_header_image1,drawer_header_image3;
     private RecyclerView recyclerView;
-    private MyAdapterRecyclerView myAdapterRecyclerView;
+    private MyAdapterForum myAdapterForum;
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="title">
+    <string-array name="title_home">
         <item>帖子</item>
         <item>资讯</item>
         <item>校园</item>
+    </string-array>
+    <string-array name="title_schoolnews">
+        <item>江科要闻</item>
+        <item>江科动态</item>
+        <item>通知公告</item>
+        <item>媒体视角</item>
+        <item>师生荣誉</item>
     </string-array>
 </resources>

@@ -11,12 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
+        app:cardCornerRadius="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:checkable="true"
         android:clickable="true"
-        android:elevation="1dp"
+        android:elevation="0.1dp"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,24 +29,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/forum_page_head"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_margin="10dp"
-                android:scaleType="centerCrop"
                 android:src="@drawable/one"
                 app:layout_constraintEnd_toStartOf="@+id/forum_page_author"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearance="@style/circleStyle" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+<!--            <com.google.android.material.imageview.ShapeableImageView-->
+<!--                android:id="@+id/forum_page_head"-->
+<!--                android:layout_width="45dp"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/one"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/forum_page_author"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:shapeAppearance="@style/circleStyle" />-->
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/forum_page_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="title_page"
+                android:text="王力宏"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/forum_page_head"
                 app:layout_constraintTop_toTopOf="@+id/forum_page_head" />
@@ -54,9 +65,9 @@
                 android:id="@+id/forum_page_pushtime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="author"
+                android:text="15:30 2022-12-05"
                 android:textColor="#848484"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/forum_page_head"
                 app:layout_constraintLeft_toLeftOf="@id/forum_page_author"
                 app:layout_constraintTop_toBottomOf="@id/forum_page_author" />
@@ -65,8 +76,8 @@
                 android:id="@+id/forum_page_midimag"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
-                android:scaleType="centerCrop"
                 android:src="@drawable/one"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +136,7 @@
                 style="@style/Widget.Material3.Button.TextButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="32"
+                android:text="32    "
                 android:textSize="15sp"
                 android:textColor="#999999"
                 app:icon="@drawable/forum_share"

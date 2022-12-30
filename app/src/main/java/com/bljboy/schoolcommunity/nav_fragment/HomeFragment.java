@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //获取资源字符串数组
         Resources resources = getResources();
-        title = resources.getStringArray(R.array.title);
+        title = resources.getStringArray(R.array.title_home);
         //抽屉视图控件绑定
         drawer_layout = getActivity().findViewById(R.id.drawer_layout);
         appbar_navigation = getActivity().findViewById(R.id.appbar_navigation);
@@ -62,10 +62,11 @@ public class HomeFragment extends Fragment {
 
     //tablayout与viewpager2配合滑动切换
     public void initView() {
-        viewPager2 = getActivity().findViewById(R.id.viewpager);
+        viewPager2 = getActivity().findViewById(R.id.viewpager_home);
         tabLayout = getActivity().findViewById(R.id.tablayout_home);
         //绑定适配器
         myAdapter = new MyAdapter(getActivity(),title);
+//        viewPager2.setUserInputEnabled(false);
         viewPager2.setAdapter(myAdapter);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override

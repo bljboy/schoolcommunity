@@ -26,4 +26,9 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <!--    tabItem文字大小-->
+    <style name="MyTabItem" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">50sp</item>
+    </style>
 </resources>

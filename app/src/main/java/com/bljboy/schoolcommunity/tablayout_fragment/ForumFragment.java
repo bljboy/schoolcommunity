@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,11 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bljboy.schoolcommunity.R;
-import com.bljboy.schoolcommunity.myadapter.MyAdapterRecyclerView;
+import com.bljboy.schoolcommunity.myadapter.MyAdapterForum;
 
 public class ForumFragment extends Fragment {
     private RecyclerView recyclerView;
-    private MyAdapterRecyclerView myAdapterRecyclerView;
+    private MyAdapterForum myAdapterForum;
 
     public ForumFragment() {
     }
@@ -36,9 +35,9 @@ public class ForumFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_forum,container,false);
         recyclerView = view.findViewById(R.id.recyclerview_forum);
-        myAdapterRecyclerView = new MyAdapterRecyclerView(getActivity());
+        myAdapterForum = new MyAdapterForum(getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-        recyclerView.setAdapter(myAdapterRecyclerView);
+        recyclerView.setAdapter(myAdapterForum);
         return view;
     }
 
