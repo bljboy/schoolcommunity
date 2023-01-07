@@ -5,21 +5,18 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.bljboy.schoolcommunity.tablayout_fragment.ForumFragment;
-import com.bljboy.schoolcommunity.tablayout_fragment.InformationFragment;
-import com.bljboy.schoolcommunity.tablayout_fragment.SchoolnewsFragment;
-import com.bljboy.schoolcommunity.tablayout_schoolnews.JxutFhonorragment;
+import com.bljboy.schoolcommunity.tablayout_schoolnews.JxuthonorFragment;
 import com.bljboy.schoolcommunity.tablayout_schoolnews.JxutdynamicFragment;
 import com.bljboy.schoolcommunity.tablayout_schoolnews.JxutmediaFragment;
 import com.bljboy.schoolcommunity.tablayout_schoolnews.JxutnewsFragment;
 import com.bljboy.schoolcommunity.tablayout_schoolnews.JxutnoticeFragment;
 
 
-public class MyAdapterSchoolnews extends FragmentStateAdapter {
+public class SchoolnewsMyAdapter extends FragmentStateAdapter {
 
     private String[] title;
 
-    public MyAdapterSchoolnews(@NonNull FragmentActivity fragmentActivity, String[] title) {
+    public SchoolnewsMyAdapter(@NonNull FragmentActivity fragmentActivity, String[] title) {
         super(fragmentActivity);
         this.title = title;
     }
@@ -38,7 +35,7 @@ public class MyAdapterSchoolnews extends FragmentStateAdapter {
             case 3:
                 return new JxutmediaFragment();
             case 4:
-                return new JxutFhonorragment();
+                return new JxuthonorFragment();
         }
         return null;
     }

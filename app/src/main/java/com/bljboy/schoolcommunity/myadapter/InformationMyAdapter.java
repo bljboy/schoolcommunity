@@ -10,23 +10,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bljboy.schoolcommunity.R;
 
-public class MyAdapterInformation extends RecyclerView.Adapter<MyAdapterInformation.MyHolder> {
+public class InformationMyAdapter extends RecyclerView.Adapter<InformationMyAdapter.MyHolder> {
     Context context;
 
-    public MyAdapterInformation(Context context) {
+    public InformationMyAdapter(Context context) {
         this.context = context;
     }
 
     @NonNull
     @Override
-    public MyAdapterInformation.MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public InformationMyAdapter.MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recyclerview_information_item, parent, false);
         return new MyHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdapterInformation.MyHolder holder, int position) {
+    public void onBindViewHolder(@NonNull InformationMyAdapter.MyHolder holder, int position) {
 
     }
 

@@ -11,31 +11,29 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bljboy.schoolcommunity.R;
-import com.bljboy.schoolcommunity.myadapter.JxutnoticeMyAdapter;
+import com.bljboy.schoolcommunity.myadapter.JxuthonorMyAdapter;
+import com.bljboy.schoolcommunity.myadapter.JxutmediaMyAdapter;
 
-
-public class JxutnoticeFragment extends Fragment {
+public class JxuthonorFragment extends Fragment {
     private RecyclerView recyclerView;
-    private JxutnoticeMyAdapter myAdapterJxutnotice;
-
-    public JxutnoticeFragment() {
+    private JxuthonorMyAdapter jxuthonorMyAdapter;
+    public JxuthonorFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_jxutnotice, container, false);
-        recyclerView = view.findViewById(R.id.recyclerview_jxutnotice);
-        myAdapterJxutnotice = new JxutnoticeMyAdapter(getActivity());
+        View view = inflater.inflate(R.layout.fragment_jxuthonorfragment, container, false);
+        recyclerView = view.findViewById(R.id.recyclerview_jxuthonor);
+        jxuthonorMyAdapter = new JxuthonorMyAdapter(getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(myAdapterJxutnotice);
+        recyclerView.setAdapter(jxuthonorMyAdapter);
         return view;
     }
 }

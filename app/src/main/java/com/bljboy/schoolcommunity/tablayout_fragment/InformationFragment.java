@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bljboy.schoolcommunity.R;
-import com.bljboy.schoolcommunity.myadapter.MyAdapterInformation;
+import com.bljboy.schoolcommunity.myadapter.InformationMyAdapter;
 
 public class InformationFragment extends Fragment {
     private RecyclerView recyclerView;
-    private MyAdapterInformation myAdapterInformation;
+    private InformationMyAdapter myAdapterInformation;
 
     public InformationFragment() {
     }

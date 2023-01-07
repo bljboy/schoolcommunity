@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/jxutnews_timemonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="11-24"
+                android:textColor="#399bd6"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/jxutnews_timeyear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/jxutnews_timeyear"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/jxutnews_timeyear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:src="@color/yellow"
+                android:text="2021"
+                android:textColor="#399bd6"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/jxutnews_timemonth"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="@+id/jxutnews_timemonth"
+                app:layout_constraintTop_toBottomOf="@+id/jxutnews_timemonth"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#e2e7ed"
+                app:layout_constraintStart_toEndOf="@+id/jxutnews_timemonth"
+                app:layout_constraintTop_toTopOf="@+id/jxutnews_timemonth"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/jxutnews_title"
+                text-overflow="ellipsis"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="张海涛校长带队赴江西联创光电科技股份有限公司进行校企合作洽谈"
+                android:textColor="#444444"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/jxutnews_timemonth"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/jxutnews_content"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="\u3000\u3000江科网讯（通讯员 李洪旭）为深化校企合作，进一步推动产教融合、产业学院建设等系列工作，12月29日上午，校长张海涛带队赴江西联创光电科技股份有限公司进行走访洽谈，副校长李玮陪同。校企合作处、人事处、科研处、人工智能学院、信息工程学院等部门（单位）负责人及相关人员随同参加。 座谈会上，江西联创光电科技股份有限公司董事长曾智斌首先对张海涛校长一行表示热烈欢迎。他回顾了与江西科技学院的合作历史，并介绍公司"
+                android:textColor="#888888"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="@+id/jxutnews_title"
+                app:layout_constraintStart_toStartOf="@+id/jxutnews_title"
+                app:layout_constraintTop_toBottomOf="@+id/jxutnews_title"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

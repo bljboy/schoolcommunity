@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.bljboy.schoolcommunity.myadapter.MyAdapter;
+import com.bljboy.schoolcommunity.myadapter.HomeMyAdapter;
 import com.bljboy.schoolcommunity.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
     private ViewPager2 viewPager2;
     private TabLayout tabLayout;
     private String[] title;
-    private MyAdapter myAdapter;
+    private HomeMyAdapter myAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,8 +65,9 @@ public class HomeFragment extends Fragment {
         viewPager2 = getActivity().findViewById(R.id.viewpager_home);
         tabLayout = getActivity().findViewById(R.id.tablayout_home);
         //绑定适配器
-        myAdapter = new MyAdapter(getActivity(),title);
-//        viewPager2.setUserInputEnabled(false);
+        myAdapter = new HomeMyAdapter(getActivity(), title);
+//        设置viewpager是否可以滑动
+        viewPager2.setUserInputEnabled(true);
         viewPager2.setAdapter(myAdapter);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override

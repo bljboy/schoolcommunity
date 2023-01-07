@@ -16,7 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 
-import com.bljboy.schoolcommunity.myadapter.MyAdapterForum;
+import com.bljboy.schoolcommunity.myadapter.ForumMyAdapter;
 import com.bljboy.schoolcommunity.nav_fragment.ChatFragment;
 import com.bljboy.schoolcommunity.nav_fragment.HomeFragment;
 import com.bljboy.schoolcommunity.nav_fragment.MeFragment;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private View drawer_header;
     private ImageView drawer_header_image, drawer_header_image1,drawer_header_image3;
     private RecyclerView recyclerView;
-    private MyAdapterForum myAdapterForum;
+    private ForumMyAdapter myAdapterForum;
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {

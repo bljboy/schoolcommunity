@@ -10,11 +10,9 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 
 import com.bljboy.schoolcommunity.R;
-import com.bljboy.schoolcommunity.myadapter.MyAdapter;
-import com.bljboy.schoolcommunity.myadapter.MyAdapterSchoolnews;
+import com.bljboy.schoolcommunity.myadapter.SchoolnewsMyAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -22,7 +20,7 @@ public class SchoolnewsFragment extends Fragment {
     private ViewPager2 viewPager2;
     private TabLayout tabLayout;
     private String[] title;
-    private MyAdapterSchoolnews myAdapterSchoolnews;
+    private SchoolnewsMyAdapter myAdapterSchoolnews;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,8 +37,9 @@ public class SchoolnewsFragment extends Fragment {
         viewPager2 = view.findViewById(R.id.viewpager_schoolnews);
         tabLayout = view.findViewById(R.id.tablayout_schoolnews);
 //        绑定适配器
-        myAdapterSchoolnews = new MyAdapterSchoolnews(getActivity(), title);
-//        viewPager2.setUserInputEnabled(false);
+        myAdapterSchoolnews = new SchoolnewsMyAdapter(getActivity(), title);
+//        设置viewpager是否可以滑动
+        viewPager2.setUserInputEnabled(false);
         viewPager2.setAdapter(myAdapterSchoolnews);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
@@ -53,8 +52,4 @@ public class SchoolnewsFragment extends Fragment {
         return view;
     }
 
-    //tablayout与viewpager2配合滑动切换
-    public void initView() {
-
-    }
 }

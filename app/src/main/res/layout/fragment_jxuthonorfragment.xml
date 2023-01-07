@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".tablayout_schoolnews.JxutdynamicFragment">
+    tools:context=".tablayout_schoolnews.JxuthonorFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_jxutdynamic"
+        android:id="@+id/recyclerview_jxuthonor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

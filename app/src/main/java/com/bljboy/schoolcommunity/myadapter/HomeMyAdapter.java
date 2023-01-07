@@ -1,7 +1,5 @@
 package com.bljboy.schoolcommunity.myadapter;
 
-import android.content.res.Resources;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -13,11 +11,11 @@ import com.bljboy.schoolcommunity.tablayout_fragment.InformationFragment;
 import com.bljboy.schoolcommunity.tablayout_fragment.SchoolnewsFragment;
 
 
-public class MyAdapter extends FragmentStateAdapter {
+public class HomeMyAdapter extends FragmentStateAdapter {
 
     private String[] title;
 
-    public MyAdapter(@NonNull FragmentActivity fragmentActivity, String[] title) {
+    public HomeMyAdapter(@NonNull FragmentActivity fragmentActivity, String[] title) {
         super(fragmentActivity);
         this.title = title;
     }

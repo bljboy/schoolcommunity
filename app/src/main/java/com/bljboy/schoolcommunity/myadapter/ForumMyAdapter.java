@@ -1,12 +1,7 @@
 package com.bljboy.schoolcommunity.myadapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.RoundedCorner;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -18,20 +13,16 @@ import com.bljboy.schoolcommunity.model.list;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.imageview.ShapeableImageView;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
-public class MyAdapterForum extends RecyclerView.Adapter<MyAdapterForum.MyHolder> {
+public class ForumMyAdapter extends RecyclerView.Adapter<ForumMyAdapter.MyHolder> {
     private Context context;
     private List<list> list;
     private ShapeableImageView shapeableImageView;
 
-    public MyAdapterForum(Context context) {
+    public ForumMyAdapter(Context context) {
         this.context = context;
 //        this.list = list;
 
@@ -39,14 +30,14 @@ public class MyAdapterForum extends RecyclerView.Adapter<MyAdapterForum.MyHolder
 
     @NonNull
     @Override
-    public MyAdapterForum.MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ForumMyAdapter.MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.recyclerview_forum_item, parent, false);
         return new MyHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdapterForum.MyHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ForumMyAdapter.MyHolder holder, int position) {
 
     }
 

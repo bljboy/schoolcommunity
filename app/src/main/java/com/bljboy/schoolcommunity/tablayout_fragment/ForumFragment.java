@@ -13,11 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bljboy.schoolcommunity.R;
-import com.bljboy.schoolcommunity.myadapter.MyAdapterForum;
+import com.bljboy.schoolcommunity.myadapter.ForumMyAdapter;
 
 public class ForumFragment extends Fragment {
     private RecyclerView recyclerView;
-    private MyAdapterForum myAdapterForum;
+    private ForumMyAdapter myAdapterForum;
 
     public ForumFragment() {
     }
@@ -35,7 +35,7 @@ public class ForumFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_forum,container,false);
         recyclerView = view.findViewById(R.id.recyclerview_forum);
-        myAdapterForum = new MyAdapterForum(getActivity());
+        myAdapterForum = new ForumMyAdapter(getActivity());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(myAdapterForum);
         return view;
