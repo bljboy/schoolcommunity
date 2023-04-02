@@ -6,14 +6,26 @@ public class JkywModel {
     private String jxutnews_title;
     private String jxutnews_content;
     private String jxutnews_url;
+    private String jxutnews_html;
 
+    public String getJxutnews_html() {
+        return jxutnews_html;
+    }
 
-    public JkywModel(String jxutnews_timemonth, String jxutnews_timeyear, String jxutnews_title, String jxutnews_content, String jxutnews_url) {
+    public void setJxutnews_html(String jxutnews_html) {
+        this.jxutnews_html = jxutnews_html;
+    }
+
+    public JkywModel() {
+    }
+
+    public JkywModel(String jxutnews_timemonth, String jxutnews_timeyear, String jxutnews_title, String jxutnews_content, String jxutnews_url, String jxutnews_html) {
         this.jxutnews_timemonth = jxutnews_timemonth;
         this.jxutnews_timeyear = jxutnews_timeyear;
         this.jxutnews_title = jxutnews_title;
         this.jxutnews_content = jxutnews_content;
         this.jxutnews_url = jxutnews_url;
+        this.jxutnews_html = jxutnews_html;
     }
 
     public String getJxutnews_url() {

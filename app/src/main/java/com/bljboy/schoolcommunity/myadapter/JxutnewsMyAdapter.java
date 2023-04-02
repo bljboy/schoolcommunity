@@ -1,8 +1,7 @@
 package com.bljboy.schoolcommunity.myadapter;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Message;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,27 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bljboy.schoolcommunity.R;
-import com.bljboy.schoolcommunity.model.Jkyw;
 import com.bljboy.schoolcommunity.model.JkywModel;
-import com.bljboy.schoolcommunity.model.list;
-import com.bljboy.schoolcommunity.tablayout_schoolnews.JxutnewsFragment;
-import com.bljboy.schoolcommunity.utils.OkhttpHelper;
-import com.google.android.material.imageview.ShapeableImageView;
+import com.bljboy.schoolcommunity.tablayout_schoolnews.JxutnewsUrl;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 public class JxutnewsMyAdapter extends RecyclerView.Adapter<JxutnewsMyAdapter.MyHolder> {
     private Context context;
@@ -58,7 +42,17 @@ public class JxutnewsMyAdapter extends RecyclerView.Adapter<JxutnewsMyAdapter.My
         holder.jxutnews_timeyear.setText(jkywModel.getJxutnews_timeyear());
         holder.jxutnews_title.setText(jkywModel.getJxutnews_title());
         holder.jxutnews_content.setText(jkywModel.getJxutnews_content());
-//        holder.jxutnews_timemonth.setText(jkywModel.getJxutnews_url());
+        holder.jxutnews_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("position", "onClick: " + jkywModel.getJxutnews_url());
+                Intent intent = new Intent(view.getContext(), JxutnewsUrl.class);
+                intent.putExtra("jkyw_url", jkywModel.getJxutnews_url());
+                intent.putExtra("jxutnews_title", jkywModel.getJxutnews_title());
+                intent.putExtra("jxutnews_html", jkywModel.getJxutnews_html());
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -72,6 +66,7 @@ public class JxutnewsMyAdapter extends RecyclerView.Adapter<JxutnewsMyAdapter.My
         MaterialTextView jxutnews_timeyear;
         MaterialTextView jxutnews_title;
         MaterialTextView jxutnews_content;
+        MaterialCardView jxutnews_card;
         View view;
 
         public MyHolder(@NonNull View itemView) {
@@ -80,6 +75,7 @@ public class JxutnewsMyAdapter extends RecyclerView.Adapter<JxutnewsMyAdapter.My
             jxutnews_timeyear = itemView.findViewById(R.id.jxutnews_timeyear);
             jxutnews_title = itemView.findViewById(R.id.jxutnews_title);
             jxutnews_content = itemView.findViewById(R.id.jxutnews_content);
+            jxutnews_card = itemView.findViewById(R.id.jxutnews_card);
             this.view = itemView;
         }
     }

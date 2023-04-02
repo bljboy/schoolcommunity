@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -18,6 +19,7 @@ import com.bljboy.schoolcommunity.R;
 import com.bljboy.schoolcommunity.model.JkywModel;
 import com.bljboy.schoolcommunity.myadapter.JxutnewsMyAdapter;
 import com.bljboy.schoolcommunity.utils.OkhttpHelper;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,6 +37,8 @@ public class JxutnewsFragment extends Fragment {
     private RecyclerView recyclerView;
     private JxutnewsMyAdapter myAdapterJxutnews;
     private List<JkywModel> list = new ArrayList<>();
+    private CircularProgressIndicator indicator;
+    private SwipeRefreshLayout jxut_refresh;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,13 +51,35 @@ public class JxutnewsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_jxutnews, container, false);
         recyclerView = view.findViewById(R.id.recyclerview_jxutnews);
-
+        indicator = view.findViewById(R.id.linearProgressIndicator);
+        jxut_refresh = view.findViewById(R.id.jxut_refresh);
+        handlerDownPullUpdate();
         return view;
+    }
+
+    private void handlerDownPullUpdate() {
+        jxut_refresh.setEnabled(true);
+        jxut_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                JkywModel jkywModel = new JkywModel();
+                jkywModel.setJxutnews_title("新数据");
+                list.add(0, jkywModel);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        myAdapterJxutnews.notifyDataSetChanged();
+                        jxut_refresh.setRefreshing(false);
+                    }
+                }, 3000);
+            }
+        });
     }
 
     public void getRequest() {
         String URL = "http://192.168.10.166:5000/jkyw.json";
         OkhttpHelper.getRequest(URL, new Callback() {
+
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
 
@@ -75,7 +101,6 @@ public class JxutnewsFragment extends Fragment {
         });
     }
 
-
     public Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -91,13 +116,14 @@ public class JxutnewsFragment extends Fragment {
                         String title = js.getString("title");
                         String page_content = js.getString("page_content");
                         String page_url = js.getString("page_url");
-                        JkywModel jkywModel = new JkywModel(day, year, title, page_content, page_url);
+                        String html = js.getString("html");
+                        JkywModel jkywModel = new JkywModel(day, year, title, page_content, page_url, html);
                         list.add(jkywModel);
                     }
                     myAdapterJxutnews = new JxutnewsMyAdapter(getActivity(), list);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+                    indicator.setVisibility(View.GONE);
                     recyclerView.setAdapter(myAdapterJxutnews);
-//                    customProgressDialog.dismiss();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
