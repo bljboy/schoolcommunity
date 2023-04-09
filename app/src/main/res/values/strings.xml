@@ -8,7 +8,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appbar_title">首页</string>
     <string name="request_loading_info">正在加载...</string>
-    <string name="tl_user_login">账号</string>
-    <string name="tl_password_login">密码</string>
+    <string name="tl_user_login">邮箱</string>
+    <string name="tl_password_login">验证码</string>
     <string name="bt_login">登录</string>
+    <string name="bt_login_code">验证码</string>
+    <string name="appbar_login_title">登录</string>
+    <string name="not_server">连接不到服务器</string>
+    <string name="email_format_error">邮箱格式错误</string>
+    <string name="reply_hint">请输入回复内容</string>
 </resources>

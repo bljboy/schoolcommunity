@@ -8,12 +8,18 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.Toast;
 
 
 import com.bljboy.schoolcommunity.myadapter.ForumMyAdapter;
@@ -21,6 +27,7 @@ import com.bljboy.schoolcommunity.nav_fragment.ChatFragment;
 import com.bljboy.schoolcommunity.nav_fragment.HomeFragment;
 import com.bljboy.schoolcommunity.nav_fragment.MeFragment;
 import com.bljboy.schoolcommunity.nav_fragment.ToolsFragment;
+import com.bljboy.schoolcommunity.variable.GlobalVars;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
@@ -35,9 +42,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton drawerheader_image1;
     private NavigationView drawerLayout;
     private View drawer_header;
-    private ImageView drawer_header_image, drawer_header_image1,drawer_header_image3;
+    private ImageView drawer_header_image, drawer_header_image1, drawer_header_image3;
     private RecyclerView recyclerView;
     private ForumMyAdapter myAdapterForum;
+
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +105,21 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.nav_container, fragment).commit();
     }
-    //绑定控件
 
+    public void onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_logout:
+                SharedPreferences sp = getSharedPreferences(GlobalVars.LOGIN_STATUS, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.clear();
+                editor.apply();
+                if (TextUtils.isEmpty(sp.getString("isLogin", ""))) {
+                    finish();
+                    Toast.makeText(this, "退出成功", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, Login.class);
+                    startActivity(intent);
+                }
 
+        }
+    }
 }

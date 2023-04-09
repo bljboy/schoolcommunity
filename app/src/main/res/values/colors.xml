@@ -12,13 +12,4 @@
     <color name="appbar_title">#221f08</color>
 
 
-    <!--    登录控件颜色-->
-    <color name="your_background_color">#F2F2F2</color>
-    <color name="your_box_stroke_color">#CCCCCC</color>
-    <color name="your_box_background_color">#FFFFFF</color>
-    <color name="your_hint_text_color">#999999</color>
-    <color name="your_text_color">#333333</color>
-    <color name="your_button_background_color">#ff4081</color>
-
-
 </resources>

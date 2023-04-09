@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_forum"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
-        app:cardCornerRadius="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
@@ -19,6 +18,7 @@
         android:clickable="true"
         android:elevation="0.1dp"
         android:focusable="true"
+        app:cardCornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,17 +39,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <com.google.android.material.imageview.ShapeableImageView-->
-<!--                android:id="@+id/forum_page_head"-->
-<!--                android:layout_width="45dp"-->
-<!--                android:layout_height="45dp"-->
-<!--                android:layout_margin="10dp"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                android:src="@drawable/one"-->
-<!--                app:layout_constraintEnd_toStartOf="@+id/forum_page_author"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:shapeAppearance="@style/circleStyle" />-->
+            <!--            <com.google.android.material.imageview.ShapeableImageView-->
+            <!--                android:id="@+id/forum_page_head"-->
+            <!--                android:layout_width="45dp"-->
+            <!--                android:layout_height="45dp"-->
+            <!--                android:layout_margin="10dp"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:src="@drawable/one"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/forum_page_author"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                app:shapeAppearance="@style/circleStyle" />-->
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/forum_page_author"
@@ -76,9 +76,9 @@
                 android:id="@+id/forum_page_midimag"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/one"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/forum_page_pushtime" />
@@ -86,7 +86,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/forum_page_context"
                 text-overflow="ellipsis"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:ellipsize="end"
@@ -107,11 +107,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="32"
-
                 android:textColor="#999999"
+                android:textSize="15sp"
                 app:icon="@drawable/forum_message"
                 app:iconTint="#999999"
-                android:textSize="15sp"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/forum_page_context" />
@@ -123,9 +122,9 @@
                 android:layout_height="wrap_content"
                 android:text="32"
                 android:textColor="#999999"
+                android:textSize="15sp"
                 app:icon="@drawable/forum_fond"
                 app:iconTint="#999999"
-                android:textSize="15sp"
 
                 app:layout_constraintEnd_toStartOf="@+id/forum_page_reply"
                 app:layout_constraintStart_toEndOf="@+id/forum_page_share"
@@ -137,8 +136,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="32    "
-                android:textSize="15sp"
                 android:textColor="#999999"
+                android:textSize="15sp"
                 app:icon="@drawable/forum_share"
                 app:iconTint="#999999"
                 app:layout_constraintStart_toStartOf="@+id/forum_page_context"

@@ -1,5 +1,6 @@
 package com.bljboy.schoolcommunity.nav_fragment;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -16,8 +17,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.bljboy.schoolcommunity.activity.PushForumActivity;
 import com.bljboy.schoolcommunity.myadapter.HomeMyAdapter;
 import com.bljboy.schoolcommunity.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -29,6 +32,7 @@ public class HomeFragment extends Fragment {
     private TabLayout tabLayout;
     private String[] title;
     private HomeMyAdapter myAdapter;
+    private FloatingActionButton fab_home_forum;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,8 +41,16 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        fab_home_forum = view.findViewById(R.id.fab_home_forum);
+        fab_home_forum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PushForumActivity.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 
     @Override
@@ -50,6 +62,7 @@ public class HomeFragment extends Fragment {
         //抽屉视图控件绑定
         drawer_layout = getActivity().findViewById(R.id.drawer_layout);
         appbar_navigation = getActivity().findViewById(R.id.appbar_navigation);
+
         appbar_navigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

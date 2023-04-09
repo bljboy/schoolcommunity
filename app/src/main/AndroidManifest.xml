@@ -16,8 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ReplyForumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PushForumActivity"
+            android:exported="false" />
+        <activity
             android:name=".Login"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -43,4 +43,11 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <style name="MyFloatingActionButtonStyle" parent="Widget.Design.FloatingActionButton">
+        <!-- 设置图标之间的间距 -->
+        <!-- 设置图标和文本的垂直对齐方式为居中 -->
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+    </style>
+
 </resources>
