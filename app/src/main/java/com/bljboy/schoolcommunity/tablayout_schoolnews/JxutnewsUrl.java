@@ -15,9 +15,9 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textview.MaterialTextView;
 
 public class JxutnewsUrl extends AppCompatActivity {
-    WebView jxut_newsurl;
-    MaterialToolbar jxut_url_toolbar;
-    MaterialTextView jxut_url_title;
+    private WebView jxut_newsurl;
+    private MaterialToolbar jxut_url_toolbar;
+    private MaterialTextView jxut_url_title;
 
     @SuppressLint("MissingInflatedId")
     @Override

@@ -16,4 +16,5 @@
     <string name="not_server">连接不到服务器</string>
     <string name="email_format_error">邮箱格式错误</string>
     <string name="reply_hint">请输入回复内容</string>
+    <string name="search_hint">请输入搜索关键字</string>
 </resources>

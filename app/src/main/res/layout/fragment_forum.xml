@@ -6,24 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".tablayout_fragment.ForumFragment">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh_layout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_forum"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_forum"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
 
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/linearProgressIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:indeterminate="true"
         android:visibility="visible" />
     <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->

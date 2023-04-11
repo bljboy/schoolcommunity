@@ -46,7 +46,6 @@ public class ForumFragment extends Fragment {
     private RecyclerView recyclerView;
     private ForumMyAdapter myAdapterForum;
     private CircularProgressIndicator linearProgressIndicator;
-    private SwipeRefreshLayout swipe_refresh_layout;
     private Button forum_page_reply;
 
     public ForumFragment() {
@@ -65,20 +64,20 @@ public class ForumFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_forum, container, false);
         recyclerView = view.findViewById(R.id.recyclerview_forum);
         linearProgressIndicator = view.findViewById(R.id.linearProgressIndicator);
-        swipe_refresh_layout = view.findViewById(R.id.swipe_refresh_layout);
+        getMyData();
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        swipe_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                getMyData();
-                Toast.makeText(getActivity(), "刷新成功", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        swipe_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//
+//                Toast.makeText(getActivity(), "刷新成功", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 //        swipe_refresh_layout.setOnChildScrollUpCallback(new SwipeRefreshLayout.OnChildScrollUpCallback() {
 //            @Override
 //            public boolean canChildScrollUp(@NonNull SwipeRefreshLayout parent, @Nullable View child) {
@@ -121,7 +120,6 @@ public class ForumFragment extends Fragment {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            swipe_refresh_layout.setRefreshing(false); // 停止刷新动画
                             showMyDataList(myDataList);
                         }
                     });

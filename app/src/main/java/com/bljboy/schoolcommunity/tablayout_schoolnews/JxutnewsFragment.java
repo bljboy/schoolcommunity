@@ -19,6 +19,7 @@ import com.bljboy.schoolcommunity.R;
 import com.bljboy.schoolcommunity.model.JkywModel;
 import com.bljboy.schoolcommunity.myadapter.JxutnewsMyAdapter;
 import com.bljboy.schoolcommunity.utils.OkhttpHelper;
+import com.bljboy.schoolcommunity.variable.GlobalVars;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import org.json.JSONArray;
@@ -43,7 +44,6 @@ public class JxutnewsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getRequest();
     }
 
     @Override
@@ -52,33 +52,12 @@ public class JxutnewsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_jxutnews, container, false);
         recyclerView = view.findViewById(R.id.recyclerview_jxutnews);
         indicator = view.findViewById(R.id.linearProgressIndicator);
-        jxut_refresh = view.findViewById(R.id.jxut_refresh);
-        handlerDownPullUpdate();
+        getRequest();
         return view;
     }
 
-    private void handlerDownPullUpdate() {
-        jxut_refresh.setEnabled(true);
-        jxut_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                JkywModel jkywModel = new JkywModel();
-                jkywModel.setJxutnews_title("新数据");
-                list.add(0, jkywModel);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        myAdapterJxutnews.notifyDataSetChanged();
-                        jxut_refresh.setRefreshing(false);
-                    }
-                }, 3000);
-            }
-        });
-    }
-
     public void getRequest() {
-        String URL = "http://192.168.10.166:5000/jkyw.json";
-        OkhttpHelper.getRequest(URL, new Callback() {
+        OkhttpHelper.getRequest(GlobalVars.URL + "jkyw/jkyw.json", new Callback() {
 
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -122,8 +101,9 @@ public class JxutnewsFragment extends Fragment {
                     }
                     myAdapterJxutnews = new JxutnewsMyAdapter(getActivity(), list);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-                    indicator.setVisibility(View.GONE);
                     recyclerView.setAdapter(myAdapterJxutnews);
+                    indicator.setVisibility(View.GONE);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

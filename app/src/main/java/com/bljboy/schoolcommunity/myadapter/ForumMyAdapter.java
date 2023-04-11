@@ -2,6 +2,7 @@ package com.bljboy.schoolcommunity.myadapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.bljboy.schoolcommunity.activity.ReplyForumActivity;
 import com.bljboy.schoolcommunity.model.ForumMyData;
 import com.bljboy.schoolcommunity.model.ForumMyDataList;
 import com.bljboy.schoolcommunity.model.list;
+import com.bljboy.schoolcommunity.variable.GlobalVars;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -59,10 +61,13 @@ public class ForumMyAdapter extends RecyclerView.Adapter<ForumMyAdapter.MyHolder
         holder.forum_page_author.setText(myData.getEmail());
         holder.forum_page_pushtime.setText(myData.getTime());
         holder.forum_page_context.setText(myData.getContent());
-        final Context context = holder.itemView.getContext();
         holder.forum_page_reply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences sp = context.getSharedPreferences(GlobalVars.LOGIN_STATUS, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putInt("id", myData.getId());
+                editor.apply();
                 Toast.makeText(context, "点击", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, ReplyForumActivity.class);
                 context.startActivity(intent);

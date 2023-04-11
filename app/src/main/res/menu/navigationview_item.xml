@@ -3,37 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/navigation_item"
-        android:title="main">
+        android:title="功能">
         <menu>
             <item
-                android:id="@+id/search_item"
-                android:checkable="true"
+                android:id="@+id/myforum_item"
                 android:icon="@drawable/me"
-                android:title="@string/menu_item_home"
-                app:showAsAction="ifRoom" />
-            <item
-                android:id="@+id/rotation_item"
-                android:checkable="true"
-                android:icon="@drawable/me"
-                android:title="@string/menu_item_home"
-                app:showAsAction="ifRoom" />
-            <item
-                android:id="@+id/accelerator_item"
-                android:checkable="true"
-                android:icon="@drawable/me"
-                android:title="@string/menu_item_home"
-                app:showAsAction="ifRoom" />
-            <item
-                android:id="@+id/dashboard_item"
-                android:checkable="true"
-                android:icon="@drawable/me"
-                android:title="@string/menu_item_home"
+                android:onClick="onMenuItemClick"
+                android:title="我的帖子"
                 app:showAsAction="ifRoom" />
         </menu>
     </item>
     <item
         android:id="@+id/labels_item"
-        android:title="功能">
+        android:title="其他">
         <menu>
             <item
                 android:id="@+id/menu_logout"

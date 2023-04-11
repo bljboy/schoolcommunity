@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.PushForumActivity">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -26,7 +25,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+        android:id="@+id/tl_reply_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -37,28 +36,30 @@
         app:layout_constraintWidth_percent="0.7">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reply_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/reply_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="回复"
-        app:layout_constraintBottom_toBottomOf="@+id/textField"
+        app:layout_constraintBottom_toBottomOf="@+id/tl_reply_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textField"
+        app:layout_constraintTop_toTopOf="@+id/tl_reply_text"
         app:layout_constraintWidth_percent="0.3" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/materialTextView"
+        android:id="@+id/recyclerview_reply"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField"
+        app:layout_constraintTop_toBottomOf="@+id/tl_reply_text"
         tools:ignore="MissingConstraints" />
 
 

@@ -27,6 +27,12 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <!-- 圆角图片 -->
+    <style name="circleStyle1">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15dp</item>
+    </style>
+
     <!--    tabItem文字大小-->
     <style name="MyTabItem" parent="TextAppearance.AppCompat.Button">
         <item name="android:textSize">50sp</item>

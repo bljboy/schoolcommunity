@@ -22,6 +22,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 
+import com.bljboy.schoolcommunity.activity.MyForumActivity;
 import com.bljboy.schoolcommunity.myadapter.ForumMyAdapter;
 import com.bljboy.schoolcommunity.nav_fragment.ChatFragment;
 import com.bljboy.schoolcommunity.nav_fragment.HomeFragment;
@@ -107,19 +108,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_logout:
-                SharedPreferences sp = getSharedPreferences(GlobalVars.LOGIN_STATUS, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
-                editor.clear();
-                editor.apply();
-                if (TextUtils.isEmpty(sp.getString("isLogin", ""))) {
-                    finish();
-                    Toast.makeText(this, "退出成功", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(this, Login.class);
-                    startActivity(intent);
-                }
+        if (item.getItemId() == R.id.menu_logout) {
+            SharedPreferences sp = getSharedPreferences(GlobalVars.LOGIN_STATUS, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.clear();
+            editor.apply();
+            if (TextUtils.isEmpty(sp.getString("isLogin", ""))) {
+                finish();
+                Toast.makeText(this, "退出成功", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, Login.class);
+                startActivity(intent);
+            }
+        }
+        if (item.getItemId() == R.id.myforum_item) {
 
+            Intent intent = new Intent(this, MyForumActivity.class);
+//            intent.putExtra("email", email);
+            startActivity(intent);
         }
     }
 }

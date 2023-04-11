@@ -15,9 +15,12 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.bljboy.schoolcommunity.activity.PushForumActivity;
+import com.bljboy.schoolcommunity.activity.SearchActivity;
 import com.bljboy.schoolcommunity.myadapter.HomeMyAdapter;
 import com.bljboy.schoolcommunity.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,6 +36,7 @@ public class HomeFragment extends Fragment {
     private String[] title;
     private HomeMyAdapter myAdapter;
     private FloatingActionButton fab_home_forum;
+    private ImageButton appbar_search;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         fab_home_forum = view.findViewById(R.id.fab_home_forum);
+        appbar_search = view.findViewById(R.id.appbar_search);
+        appbar_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(getActivity(), "点击", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         fab_home_forum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
