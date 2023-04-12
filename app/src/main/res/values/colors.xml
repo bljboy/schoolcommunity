@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <color name="appbar_color">#ffeb3b</color>
-    <color name="appbar_title">#221f08</color>
+    <color name="appbar_title">#FF000000</color>
+    <color name="bt_color">#000000</color>
 
 
 </resources>

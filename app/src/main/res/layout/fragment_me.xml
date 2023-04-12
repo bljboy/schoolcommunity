@@ -47,6 +47,8 @@
 
                 <TextView
                     android:id="@+id/textView"
+                    android:fontFamily="@font/pfont"
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
@@ -71,6 +73,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="25dp"
+                    android:fontFamily="@font/pfont"
+                    android:textStyle="bold"
                     android:text="人生是一场旅程，我们每个人都会遇到各种各样的挑战和困难，在这个过程中我们会经历成长、感悟和收获。在我走过的路上，我深刻地认识到，人生的意义并不在于我们得到了多少，而是我们能够用什么样的心态和行动去面对和应对生活中的各种挑战。"
                     android:textSize="17sp"
                     app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
@@ -79,7 +83,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/font1"
+                    android:fontFamily="@font/font2"
                     android:text="图集"
                     android:textColor="#0f0c29"
                     android:textSize="20sp"

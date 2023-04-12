@@ -32,6 +32,7 @@ import android.widget.Toast;
 
 import com.bljboy.schoolcommunity.R;
 import com.bljboy.schoolcommunity.utils.NotificationReceiver;
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -44,6 +45,7 @@ public class CourseActivity extends AppCompatActivity {
     private EditText et_time;
     private NotificationManager notificationManager;
     private Notification notification;
+    private MaterialToolbar back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,13 @@ public class CourseActivity extends AppCompatActivity {
         et_title = findViewById(R.id.et_title);
         et_message = findViewById(R.id.et_message);
         et_time = findViewById(R.id.et_time);
-
+        back = findViewById(R.id.back);
+        back.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         btn_send_simple.setOnClickListener(new View.OnClickListener() {
             @Override

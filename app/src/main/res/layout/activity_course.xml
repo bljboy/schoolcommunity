@@ -1,16 +1,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="5dp">
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/back"
+            app:title="课程提醒设置"
+            app:titleCentered="true">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:fontFamily="@font/pfont"
             android:gravity="center"
             android:text="提醒时间："
             android:textColor="@color/black"
@@ -18,16 +40,18 @@
 
         <EditText
             android:id="@+id/et_time"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:inputType="number"
             android:hint="填写提醒时间(5)/秒后"
+            android:inputType="number"
             android:textColor="@color/black"
             android:textSize="17sp" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -36,6 +60,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:fontFamily="@font/pfont"
             android:gravity="center"
             android:text="消息标题："
             android:textColor="@color/black"
@@ -43,10 +68,12 @@
 
         <EditText
             android:id="@+id/et_title"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+
             android:hint="请填写消息标题"
             android:textColor="@color/black"
             android:textSize="17sp" />
@@ -68,11 +95,12 @@
 
         <EditText
             android:id="@+id/et_message"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:gravity="top"
+            android:fontFamily="@font/pfont"
             android:hint="请填写消息内容"
             android:textColor="@color/black"
             android:textSize="17sp" />
@@ -84,7 +112,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:fontFamily="@font/pfont"
+        android:textStyle="bold"
         android:text="设置"
-        android:textColor="@color/black"
+        android:textColor="@color/bt_color"
         android:textSize="17sp" />
 </LinearLayout>

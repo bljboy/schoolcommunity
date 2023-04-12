@@ -46,7 +46,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="王力宏"
-                android:textSize="18sp"
+                android:fontFamily="@font/pfont"
+                android:textStyle="bold"
+                android:textSize="@dimen/tv_user"
                 app:layout_constraintStart_toEndOf="@+id/reply_page_head"
                 app:layout_constraintTop_toTopOf="@+id/reply_page_head" />
 
@@ -57,7 +59,10 @@
                 android:layout_marginTop="5dp"
                 android:text="15:30 2022-12-05"
                 android:textColor="#848484"
-                android:textSize="12sp"
+                android:fontFamily="@font/pfont2"
+                android:textStyle="bold"
+
+                android:textSize="@dimen/tv_time"
                 app:layout_constraintLeft_toLeftOf="@id/reply_page_author"
                 app:layout_constraintTop_toBottomOf="@id/reply_page_author" />
 
@@ -82,9 +87,12 @@
                 android:lineHeight="25dp"
                 android:maxLines="3"
                 android:padding="8dp"
+                android:fontFamily="@font/pfont"
+                android:textStyle="bold"
+
                 android:text="防嗮服是防嗮服是s防sfsfsafasfasfaafsas嗮服是防嗮服是防嗮服是"
                 android:textColor="#848484"
-                android:textSize="18sp"
+                android:textSize="@dimen/tv_content"
                 app:layout_constraintEnd_toEndOf="@id/reply_page_midimag"
                 app:layout_constraintStart_toStartOf="@id/reply_page_midimag"
                 app:layout_constraintTop_toBottomOf="@id/reply_page_midimag" />

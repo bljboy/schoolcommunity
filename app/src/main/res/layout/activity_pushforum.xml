@@ -61,6 +61,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:maxLength="20"
+                    android:fontFamily="@font/pfont"
                     android:singleLine="true"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -87,6 +88,7 @@
                     android:inputType="textMultiLine"
                     android:maxLines="5"
                     android:minLines="3"
+                    android:fontFamily="@font/pfont"
                     android:singleLine="true"
                     android:textSize="22sp" />
             </com.google.android.material.textfield.TextInputLayout>

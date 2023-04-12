@@ -53,6 +53,8 @@
         android:id="@+id/et_chat_inputmessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/pfont"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bt_chat_sendmessage"
         app:layout_constraintStart_toStartOf="@+id/materialCardView3" />
@@ -62,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="发送"
+        android:textColor="@color/bt_color"
         app:layout_constraintBottom_toBottomOf="@+id/et_chat_inputmessage"
         app:layout_constraintEnd_toEndOf="@+id/materialCardView3"
         app:layout_constraintTop_toTopOf="@+id/et_chat_inputmessage" />
