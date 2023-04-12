@@ -19,6 +19,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.SystemUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SystemForumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SystemAdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ChatMessageActivity"
             android:exported="false" />
         <activity

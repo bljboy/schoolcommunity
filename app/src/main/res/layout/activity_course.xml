@@ -23,7 +23,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:inputType="number"
-            android:hint="填写提醒时间(5)/分钟后"
+            android:hint="填写提醒时间(5)/秒后"
             android:textColor="@color/black"
             android:textSize="17sp" />
 

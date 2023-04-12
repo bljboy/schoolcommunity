@@ -14,15 +14,30 @@
         </menu>
     </item>
     <item
+        android:id="@+id/labels_item_system"
+        android:title="系统">
+        <menu>
+
+            <item
+                android:id="@+id/menu_system"
+                android:icon="@drawable/me"
+                android:onClick="onMenuItemClick"
+                android:title="系统管理员"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+    <item
         android:id="@+id/labels_item"
         android:title="其他">
         <menu>
+
             <item
                 android:id="@+id/menu_logout"
                 android:icon="@drawable/me"
                 android:onClick="onMenuItemClick"
                 android:title="退出登录"
                 app:showAsAction="ifRoom" />
+
         </menu>
     </item>
 </menu>

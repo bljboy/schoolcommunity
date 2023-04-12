@@ -70,17 +70,17 @@ public class CourseActivity extends AppCompatActivity {
                 String message = et_message.getText().toString();
                 String time = et_time.getText().toString();
                 int num = Integer.parseInt(time); // 将字符串类型转换为整数类型
-                int num2 = num * 60000;
+                int num2 = num * 1000;
+                Toast.makeText(CourseActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
                 Handler handler = new Handler();
                 Runnable runnable = new Runnable() {
                     @Override
                     public void run() {
                         // 定时执行的操作
                         sendSimpleNotify(title, message);
-//                        handler.postDelayed(this, 1000); // 递归调用自身，实现循环执行
                     }
                 };
-                handler.postDelayed(runnable, 1); // 延迟1秒后执行
+                handler.postDelayed(runnable, num2); // 延迟1秒后执行
             }
         });
     }
