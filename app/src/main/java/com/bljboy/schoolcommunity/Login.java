@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.bljboy.schoolcommunity.model.Code;
+import com.bljboy.schoolcommunity.model.ForumMyData;
+import com.bljboy.schoolcommunity.model.ForumMyDataList;
 import com.bljboy.schoolcommunity.utils.OkhttpHelper;
 import com.bljboy.schoolcommunity.utils.isValidEmail;
 import com.bljboy.schoolcommunity.variable.GlobalVars;
@@ -24,6 +26,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -70,6 +73,7 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+
 
     //点击登录按钮检验验证码
     public void getCaptcha() {
@@ -126,11 +130,6 @@ public class Login extends AppCompatActivity {
     public void getInputEmail() {
         String email = et_email_login.getText().toString();
         if (isValidEmail.isValidEmail(email)) {
-            Log.e("email", "------>" + email);
-//            RequestBody requestBody = new FormBody.Builder()
-//                    .add("email", email)
-////                    .add("captcha",captcha)
-//                    .build();
             OkhttpHelper.getRequest(LOGIN_URL + "captcha?email=" + email, new Callback() {
                 @Override
                 public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -155,10 +154,15 @@ public class Login extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-//                                    Toast.makeText(Login.this, code.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Login.this, code.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
+                        } else {
+                            Toast.makeText(Login.this, "资源错误", Toast.LENGTH_SHORT).show();
                         }
+
+                    } else {
+                        Toast.makeText(Login.this, "w服务器错误", Toast.LENGTH_SHORT).show();
 
                     }
                     response.close();
@@ -214,5 +218,41 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }
+
+    public void getIsEmail(String email) {
+        OkhttpHelper.getRequest(GlobalVars.URL + "user/isemail?email=" + email, new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                String jsonData = response.body().string();
+                if (response.isSuccessful()) {
+                    Gson gson = new Gson();
+                    ForumMyDataList dataList = gson.fromJson(jsonData, ForumMyDataList.class);
+                    String message = dataList.getMessage();
+                    if (dataList.getCode() == 200) {
+                        Log.e("getLoginStatus", "getLoginStatus: " + message);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+
+                            }
+                        });
+                    } else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(Login.this, dataList.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                }
+            }
+        });
     }
 }

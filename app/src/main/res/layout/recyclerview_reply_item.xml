@@ -35,7 +35,7 @@
                 android:layout_height="45dp"
                 android:layout_margin="10dp"
                 android:src="@drawable/one"
-                android:visibility="invisible"
+                android:visibility="visible"
                 app:layout_constraintEnd_toStartOf="@+id/reply_page_author"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -75,25 +75,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/reply_page_pushtime" />
+            <!--            android:lineHeight="25dp"-->
+            <!--            android:maxLines="3"-->
+            <!--            text-overflow="ellipsis"-->
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/reply_page_context"
-                text-overflow="ellipsis"
-                android:layout_width="match_parent"
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/pfont"
-                android:lineHeight="25dp"
-                android:maxLines="3"
-                android:padding="8dp"
-                android:text="防嗮服是防嗮服是s防sfsfsafasfasfaafsas嗮服是防嗮服是防嗮服是"
+                android:padding="17dp"
+                android:text="当 设置为显示密码时，可以添加图标 在屏蔽密码或将密码显示为纯文本之间切换"
                 android:textColor="#848484"
                 android:textSize="@dimen/tv_content"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/reply_page_midimag"
-                app:layout_constraintStart_toStartOf="@id/reply_page_midimag"
-                app:layout_constraintTop_toBottomOf="@id/reply_page_midimag" />
+                app:layout_constraintStart_toEndOf="@+id/reply_page_head"
+                app:layout_constraintTop_toBottomOf="@+id/reply_page_pushtime" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

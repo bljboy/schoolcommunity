@@ -87,29 +87,24 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/forum_page_context"
                 text-overflow="ellipsis"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/pfont"
-                android:lineHeight="25sp"
-                android:maxLines="3"
-                android:paddingStart="10dp"
-                android:paddingEnd="20dp"
+                android:padding="17dp"
                 android:text="防嗮服是防嗮服是s防sfsfsafasfasfaafsas嗮服是防嗮服是防嗮服是"
                 android:textSize="@dimen/tv_content"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/forum_page_head"
+                app:layout_constraintStart_toEndOf="@+id/forum_page_head"
                 app:layout_constraintTop_toBottomOf="@+id/forum_page_pushtime" />
             <!--                style="@style/Widget.Material3.Button.TextButton.Icon"
             -->
             <Button
                 android:id="@+id/forum_page_reply"
-                style="@style/Widget.Material3.Button.TextButton.Icon"
+                style="@style/Widget.Material3.Button.TextButton.Dialog.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="32"
                 android:textColor="#999999"
                 android:textSize="15sp"
                 app:icon="@drawable/forum_message"
@@ -119,31 +114,29 @@
 
             <Button
                 android:id="@+id/forum_page_fond"
-                style="@style/Widget.Material3.Button.TextButton.Icon"
+                style="@style/Widget.Material3.Button.TextButton.Dialog.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="32"
                 android:textColor="#999999"
                 android:textSize="15sp"
                 app:icon="@drawable/forum_fond"
                 app:iconTint="#999999"
-
                 app:layout_constraintEnd_toStartOf="@+id/forum_page_reply"
                 app:layout_constraintStart_toEndOf="@+id/forum_page_share"
                 app:layout_constraintTop_toTopOf="@+id/forum_page_share" />
 
             <Button
                 android:id="@+id/forum_page_share"
-                style="@style/Widget.Material3.Button.TextButton.Icon"
+                style="@style/Widget.Material3.Button.TextButton.Dialog.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="32    "
+                android:drawablePadding="-8dp"
                 android:textColor="#999999"
                 android:textSize="15sp"
                 app:icon="@drawable/forum_share"
                 app:iconTint="#999999"
-                app:layout_constraintStart_toStartOf="@+id/forum_page_context"
+                app:layout_constraintStart_toStartOf="@+id/forum_page_head"
                 app:layout_constraintTop_toBottomOf="@+id/forum_page_context" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

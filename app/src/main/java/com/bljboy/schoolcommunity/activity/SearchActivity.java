@@ -59,6 +59,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!search_text.getText().toString().equals("")) {
                     getSearch(search_text.getText().toString());
+                    search_text.setText("");
                 } else {
                     Toast.makeText(SearchActivity.this, "请输入关键字", Toast.LENGTH_SHORT).show();
                 }

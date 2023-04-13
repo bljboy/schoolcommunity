@@ -137,6 +137,7 @@ public class ChatMessageActivity extends AppCompatActivity {
                                 ChatMessageData message = new ChatMessageData(content, senderId, ChatMessageData.TYPE_OTHER);
                                 mChatMessages.add(message);
                                 chatMessageAdapter.notifyItemInserted(mChatMessages.size() - 1);
+                                et_chat_inputmessage.setText("");
                             }
 
                         }

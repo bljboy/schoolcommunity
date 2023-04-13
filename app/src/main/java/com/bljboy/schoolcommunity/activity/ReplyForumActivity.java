@@ -111,6 +111,7 @@ public class ReplyForumActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             showMyDataList(myDataList);
+                            reply_text.setText("");
                         }
                     });
                 }

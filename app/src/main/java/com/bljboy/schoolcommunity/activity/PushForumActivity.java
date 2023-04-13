@@ -53,6 +53,7 @@ public class PushForumActivity extends AppCompatActivity {
         fab_pushforum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                et_pushforum_title.setText("test");
                 String title = et_pushforum_title.getText().toString();
                 String content = et_pushforum_content.getText().toString();
 //                Log.e("title", "onCreate: " + title);

@@ -75,22 +75,17 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/forum_page_context"
-                text-overflow="ellipsis"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/pfont"
-                android:lineHeight="25sp"
-                android:maxLines="3"
-                android:paddingStart="10dp"
-                android:paddingEnd="20dp"
+                android:padding="17dp"
                 android:text="防嗮服是防嗮服是s防sfsfsafasfasfaafsas嗮服是防嗮服是防嗮服是"
                 android:textColor="#848484"
                 android:textSize="@dimen/tv_content"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/forum_page_head"
+                app:layout_constraintStart_toEndOf="@+id/forum_page_head"
                 app:layout_constraintTop_toBottomOf="@+id/forum_page_pushtime" />
             <!--                style="@style/Widget.Material3.Button.TextButton.Icon"
             -->
